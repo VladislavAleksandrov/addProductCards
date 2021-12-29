@@ -9,6 +9,7 @@ body {
 .container {
   max-width: 1440px;
   padding: 32px;
+  margin: 0 auto;
 }
 
 .header {
