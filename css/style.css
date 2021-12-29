@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap");
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: normal;
+  color: #3F3F3F;
+  background: #E5E5E5;
+}
+
+.container {
+  max-width: 1440px;
+  padding: 32px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+.header__title {
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 35px;
+}
+.choose-form {
+  position: relative;
+}
+.choose-form__select {
+  display: inline-block;
+  width: 122px;
+  height: 36px;
+  color: #B4B4B4;
+  background: #FFFEFB;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 4px;
+  padding-left: 16px;
+  font-size: 12px;
+  line-height: 15px;
+  appearance: none;
+}
+.choose-form__chevron {
+  position: absolute;
+  bottom: calc(50% - 4px);
+  right: 16px;
+  height: 5px;
+  width: 5px;
+  background: no-repeat url("../img/chevron.svg");
+  background-size: contain;
+}
+
+.add-product {
+  min-width: 332px;
+  padding: 24px;
+  background: #FFFEFB;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.04), 0 6px 10px rgba(0, 0, 0, 0.02);
+  border-radius: 4px;
+  height: 440px;
+}
+.add-product__title {
+  position: relative;
+  color: #49485E;
+  font-size: 10px;
+  line-height: 13px;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+  display: block;
+}
+.add-product__required {
+  position: absolute;
+  display: inline-block;
+  height: 4px;
+  width: 4px;
+  background: #FF8484;
+  border-radius: 4px;
+  top: 0;
+}
+.add-product__input {
+  padding: 10px 0 10px 16px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  border: none;
+  width: 100%;
+  margin-bottom: 16px;
+  transition: all 0.3s ease-in-out;
+}
+.add-product__button {
+  width: 100%;
+  height: 36px;
+  background: #EEEEEE;
+  border-radius: 10px;
+  border: none;
+  color: #B4B4B4;
+  font-weight: 600;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.02em;
+  transition: all 0.3s ease-in-out;
+}
+.add-product__button_edit {
+  background: #7BAE73;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #FFFFFF;
+}
+
+::placeholder {
+  font-size: 12px;
+  line-height: 15px;
+  color: #B4B4B4;
+  text-align: start;
+}
+
+#product-description {
+  height: 108px;
+  resize: none;
+  margin-bottom: 16px;
+}
+
+.add-product__input-block {
+  position: relative;
+}
+
+.product-name_error, .product-link_error, .product-price_error {
+  position: absolute;
+  font-size: 8px;
+  line-height: 10px;
+  letter-spacing: -0.02em;
+  color: #FF8484;
+  bottom: 0;
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.error {
+  outline-color: red;
+}
+
+.products {
+  display: flex;
+  gap: 16px;
+}
+.products__cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 332px);
+  gap: 16px 16px;
+}
+
+.card {
+  max-width: 332px;
+  height: 423px;
+  background: #FFFEFB;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.04), 0 6px 10px rgba(0, 0, 0, 0.02);
+  border-radius: 4px;
+  position: relative;
+  animation: showCard 0.3s ease-in-out;
+}
+.card__remove {
+  animation: removeCard 0.6s ease-in-out forwards;
+}
+.card__img-block {
+  height: 200px;
+  border-radius: 4px 4px 0 0;
+  overflow: hidden;
+}
+.card__img {
+  width: 100%;
+}
+.card__content-block {
+  height: 223px;
+  padding: 16px 16px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card__name {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  margin-bottom: 16px;
+}
+.card__description {
+  font-size: 16px;
+  line-height: 20px;
+}
+.card__price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 30px;
+}
+.card__delete {
+  background: url("./../img/delete.svg") no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  border: none;
+  display: none;
+  cursor: pointer;
+}
+.card:hover .card__delete {
+  display: block;
+}
+
+@keyframes showCard {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes removeCard {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+    max-width: 332px;
+    height: 423px;
+  }
+  100% {
+    max-width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
