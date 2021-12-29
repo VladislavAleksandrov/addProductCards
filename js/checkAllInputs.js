@@ -1,3 +1,7 @@
+const checkUrl = (string) => {
+	return (string.startsWith('https://') || string.startsWith('http://') || string.startsWith('img/')) && (string.endsWith('.png') || string.endsWith('.jpg') || string.endsWith('.jpeg') || string.endsWith('.gif') || string.endsWith('.svg') || string.endsWith('.bmp'));
+}
+
 const checkAllInputs = () => {
 	const button = document.querySelector('.add-product__button');
 	const $productName = document.querySelector('#product-name');

@@ -9,8 +9,6 @@ const formatPriceValue = () => {
 			productPrice.splice(i, 0, ' ');
 		}
 		$productPrice.value = productPrice.join('');
-	//	console.log(new Intl.NumberFormat('ru-RU').format(number));
-
 	})
 }
 formatPriceValue();

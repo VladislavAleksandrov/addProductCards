@@ -7,17 +7,15 @@
         integrity="sha512-Y0MM+V6ymRKN2zStTqzQ227DWhhp4Mzdo6gnlRnuaNCbc+YN/ZH0sBCLTM4M0oSy9c9VKiCvd4Jk44aCLrNS5Q=="
         crossorigin="anonymous" referrerpolicy="no-referrer"/>
   <link rel="stylesheet" href="./css/style.css">
-  <script src="js/renderProductCard.js" defer></script>
-  <script src="js/checkUrl.js" defer></script>
+  <script src="js/checkForm.js" defer></script>
   <script src="js/alertFillProduct.js" defer></script>
   <script src="js/render.js" defer></script>
   <script src="js/formatPriceValue.js" defer></script>
   <script src="js/checkAllInputs.js" defer></script>
   <script src="js/deleteProducts.js" defer></script>
-  <script src="js/saveProducts.js" defer></script>
-  <script src="js/renderFromLocal.js" defer></script>
-  <script src="js/saveArrayOfProducts.js" defer></script>
-  <script src="js/data.js"></script>
+  <script src="js/data.js" defer></script>
+  <script src="js/addProduct.js" defer></script>
+  <script src="js/arraySort.js" defer></script>
 </head>
 <body>
 <div class="container">
@@ -27,6 +25,10 @@
       <label class="choose-form__label" for="choose-form"></label>
       <select required class="choose-form__select" name="school" id="choose-form">
         <option class="choose-form__value" value="default">По умолчанию</option>
+        <option class="choose-form__value" value="decrease">По убыванию цены</option>
+        <option class="choose-form__value" value="increase">По возрастанию цены</option>
+        <option class="choose-form__value" value="az">От А до Я</option>
+        <option class="choose-form__value" value="za">От Я до А</option>
       </select>
       <div class="choose-form__chevron"></div>
     </div>
@@ -35,8 +37,7 @@
   <div class="products">
 
     <aside class="add-product">
-      <form id="add-product" action="#">
-
+      <form id="add-product">
         <div class="add-product__input-block">
           <label for="product-name" class="add-product__title">Наименование товара <span
             class="add-product__required"></span></label>
@@ -63,75 +64,11 @@
           <div class="product-price_error">Поле является обязательным</div>
         </div>
 
-        <button type="button" class="add-product__button">Добавить товар</button>
+        <button type="submit" class="add-product__button">Добавить товар</button>
       </form>
     </aside>
 
     <section class="products__cards">
-
-      <div class="products__card card" data-id="0">
-        <div class="card__img-block">
-          <img src="img/product.png" alt="Не удалось загрузить картинку" class="card__img">
-        </div>
-        <div class="card__content-block">
-          <div>
-            <div class="card__name">Наименование товара</div>
-            <div class="card__description">Довольно-таки интересное описание товара в несколько строк. Довольно-таки
-              интересное описание товара в несколько строк
-            </div>
-          </div>
-          <div class="card__price">10 000 руб.</div>
-        </div>
-        <button class="card__delete"></button>
-      </div>
-
-      <div class="products__card card" data-id="1">
-        <div class="card__img-block">
-          <img src="img/product.png" alt="Не удалось загрузить картинку" class="card__img">
-        </div>
-        <div class="card__content-block">
-          <div>
-            <div class="card__name">Наименование товара</div>
-            <div class="card__description">Довольно-таки интересное описание товара в несколько строк. Довольно-таки
-              интересное описание товара в несколько строк
-            </div>
-          </div>
-          <div class="card__price">10 000 руб.</div>
-        </div>
-        <button class="card__delete"></button>
-      </div>
-
-      <div class="products__card card" data-id="2">
-        <div class="card__img-block">
-          <img src="img/product.png" alt="Не удалось загрузить картинку" class="card__img">
-        </div>
-        <div class="card__content-block">
-          <div>
-            <div class="card__name">Наименование товара</div>
-            <div class="card__description">Довольно-таки интересное описание товара в несколько строк. Довольно-таки
-              интересное описание товара в несколько строк
-            </div>
-          </div>
-          <div class="card__price">10 000 руб.</div>
-        </div>
-        <button class="card__delete"></button>
-      </div>
-
-      <div class="products__card card" data-id="">
-        <div class="card__img-block">
-          <img src="img/product.png" alt="Не удалось загрузить картинку" class="card__img">
-        </div>
-        <div class="card__content-block">
-          <div>
-            <div class="card__name">Наименование товара</div>
-            <div class="card__description">Довольно-таки интересное описание товара в несколько строк. Довольно-таки
-              интересное описание товара в несколько строк
-            </div>
-          </div>
-          <div class="card__price">10 000 руб.</div>
-        </div>
-        <button class="card__delete"></button>
-      </div>
 
     </section>
 

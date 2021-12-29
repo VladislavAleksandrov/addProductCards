@@ -2,17 +2,17 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 16px;
+
   &__title {
     font-weight: 600;
     font-size: 28px;
     line-height: 35px;
   }
-  &__select {
-
-  }
 }
+
 .choose-form {
   position: relative;
+
   &__select {
     display: inline-block;
     width: 122px;
@@ -27,6 +27,7 @@
     line-height: 15px;
     appearance: none;
   }
+
   &__chevron {
     position: absolute;
     bottom: calc(50% - 4px);

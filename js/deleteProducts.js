@@ -1,17 +1,14 @@
 const deleteProducts = () => {
 	document.querySelector('.products__cards').addEventListener('click', (event) => {
 		if (!event.target.closest('.card__delete')) return;
-		const $card = event.target.closest('.card')
-		$card.classList.add('card__remove')
+		const $card = event.target.closest('.card');
+		let id = $card.dataset.id;
+		$card.classList.add('card__remove');
 		$card.addEventListener('animationend', () => {
-			console.log('animation end')
 			$card.remove();
-			saveProducts();
+			array = array.filter(product => +product.id !== +id)
+			saveArrayOfProducts(array);
 		}, {once: true})
-
-
-
-
 
 	})
 }

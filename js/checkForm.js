@@ -1,4 +1,4 @@
-const renderProductCard = () => {
+const checkForm = () => {
 	const button = document.querySelector('.add-product__button');
 	const $productName = document.querySelector('#product-name');
 	const $productLink = document.querySelector('#product-link');
@@ -12,13 +12,9 @@ const renderProductCard = () => {
 			alertFillProductLink();
 		} else if (!$productPrice.value) {
 			alertFillProductPrice();
-		} else {
-			pushToArray();
-			render(array);
 		}
 	}
-
 	button.addEventListener('click', checkFormValues);
 }
 
-renderProductCard()
+checkForm()
